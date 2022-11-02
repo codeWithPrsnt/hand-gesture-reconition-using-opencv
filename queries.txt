@@ -1,0 +1,49 @@
+my project aims to  recognition of some basic signs using hand gesture.
+
+Q.> what is all about project?
+
+Ans: This project made for those people who are dumb and deaf and are not able to convey their messages to normal people.it can be used as a reference between a deaf,dumb and a normal 
+person.
+
+TOOLS:
+opencv
+
+A gesture is like a non verbal communication.a movement of our part of the body especially our hands to express any idea or meaning.
+
+Many reasearchers has proposed numerous model for hand gesture recognition such as electronic based,glove based and marker based such as use of color marker on finger and wrist.
+
+BASIC TRAINING MODELS
+Given is The 44 list of Images which our Computer can recognize.
+The Images includes 24 Alphabets excluding “J” and “Z” , since recognizing them involves dynamic motion of fingures .
+The other 20 images are used in daily life for conveying basic messages such as “Best of Luck” , “I Love you” , “Bye” ,etc.
+The Best Part of the project is that, we can form different types of words by using particular alphabets . So, if particular Sign can’t be displayed then we can form words of that
+ sign and covey the message.
+
+
+Q.> How it works?
+ANS:1.> recognise various gestures and applied them as input to computer.
+         2.> making computer learn the particular images by showing same type of image in real time.
+         3.> convert RGB color format in to HSV to extract intensity signal.the transforming detection results in to black and white images.
+Actually rgb is colour space in which colors are divided in to three differnt plains such as red,green and blue such like that we have another colur plain in which colour are divided in 
+to three plains H,S and V ..H means hue,S means saturation and v means value.actually hue is point where all color values exists and second one is saturation it just represent the shade 
+of the colour if we want any shade of colour then saturation gives that shade and the last one is value it is nothing but it controls the intensity of colour.
+
+. Rgb value range from [0-255]  but in case of hsv hue has  value range from[0-180]  and saturation has value range from [0-255] and value also has value range from [0-255].
+
+Then how to convert image from rgb in to hsv firstly we import the cv2 and then read image through imread function and covert the rgb in to hsv through cvtcolor module and then show it to
+ through imshow function.
+
+And then extract the hue ,stauration and value channel through imshow function and in the end we display the result through cv2.waitkey(0)  actually cv2.waitkey() displays the result in 
+screen until we stop the result and in the end cv2.destroyallwindows() so that if waitkey give any response then it will distroy all the windows means to close the windows.
+
+4.> converted gestures in to command and trained the computers.
+5.> trained the computer for indentifying particular sign .
+
+Q.> FUTURE PLANS:
+
+1.> Normal people person have to always present in the front of laptop screen to recognize the sign and my task is to convert that particular sign in to word to speech form so that
+ normal person can understand the message far behind or with phone call too.
+
+2.>more different sign languages can be added to simply big words so that communication can be done easily between the users.
+
+3.>Since this whole Project Works for the Static Images , our main aim will be to convert this Static Sign Recognition into Dynamic in real Time.

@@ -1,0 +1,42 @@
+OpenCV is a cross-platform library using which we can develop real-time computer vision applications. It mainly focuses on image processing, video capture and analysis including features 
+like face detection and object detection.
+OpenCV-Python is a library of Python bindings designed to solve computer vision problems.OpenCV was started at Intel in 1999 by Gary Bradsky, and the first release came out in 2000.
+
+OpenCV supports a wide variety of programming languages such as C++, Python, Java, etc., and is available on different platforms including Windows, Linux, OS X, Android, and iOS. Interfaces for high-speed GPU operations based on CUDA and OpenCL are also under active development.
+
+NumPy is a python library used for working with arrays. It also has functions for working in domain of linear algebra, fourier transform, and matrices.
+OpenCV-Python makes use of Numpy, which is a highly optimized library for numerical operations with a MATLAB-style syntax. All the OpenCV array structures are converted to and from Numpy arrays. This also makes it easier to integrate with other libraries that use Numpy such as SciPy and Matplotlib.
+
+cv2.VideoCapture(0):To capture a video, you need to create a VideoCapture object. Its argument can be either the device index or the name of a video file. Device index is just the number to specify which camera. Normally one camera will be connected (as in my case). So I simply pass 0 (or -1). You can select the second camera by passing 1 and so on. After that, you can capture frame-by-frame. But at the end, don’t forget to release the capture.
+
+cap.read():returns a bool (True/False). If frame is read correctly, it will be True. So you can check end of the video by checking this return value.
+
+cv2.flip():cv2.flip() method is used to flip a 2D array. The function cv::flip flips a 2D array around vertical, horizontal, or both axes.src: Input array.
+dst: Output array of the same size and type as src.
+flip code: A flag to specify how to flip the array; 0 means flipping around the x-axis and positive value (for example, 1) means flipping around y-axis. 
+Negative value (for example, -1) means flipping around both axes.
+
+cv2.rectangle(image, start_point, end_point, color, thickness):is used to draw a rectangle on any image.
+
+cv2.dilate():Basics of dilation:
+
+Increases the object area
+Used to accentuate features
+erosion removes white noises, but it also shrinks our object. So we dilate it. Since noise is gone, they won’t come back, but our object area increases.
+It is also useful in joining broken parts of an object.
+
+cvw.findContours():Contours are defined as the line joining all the points along the boundary of an image that are having the same intensity. Contours come handy in shape analysis, finding the size of the object of interest, and object detection.
+
+OpenCV has findContour() function that helps in extracting the contours from the image. It works best on binary images, so we should first apply thresholding techniques, Sobel edges, etc.
+
+cv2.arcLength() is used to calculate the perimeter of the contour. If the second argument is True then it considers the contour to be closed. Then this perimeter is used to calculate the epsilon value for cv2.approxPolyDP() function with a precision factor for approximating a shape.it works for the cases where there are sharp edges in the contours like a document boundary.
+
+cv2.convexHull():The smallest or the tight-fitting convex boundary is known as a convex hull.
+
+cv2.convexityDefects():Any deviation of the object from convex hull can be considered as convexity defect.
+
+cv2.imread() method loads an image from the specified file. If the image cannot be read (because of missing file, improper permissions, unsupported or invalid format) then this method returns an empty matrix.
+
+cv2.putText(image, text, org, font, fontScale, color[, thickness[, lineType[, bottomLeftOrigin]]]):method is used to draw a text string on any image.
+
+cv2.imshow() method is used to display an image in a window. The window automatically fits to the image size.
